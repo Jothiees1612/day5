@@ -1,0 +1,133 @@
+code for anonymous and iife function
+
+for odd number?
+
+ var arr = [1,2,3,4,5,6,7,8,9,10];
+var odd = arr.filter(function(number){
+    return number % 2 !== 0;
+});
+console.log(odd);
+
+Convert all the strings to title caps in a string array?
+
+var arr = ["hello", "world"];
+var result = arr.map(function(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+});
+console.log(result);
+
+Sum of all numbers in an array?
+
+var arr = [1,2,3,4,5];
+var sum = 0;
+arr.forEach(function(item){
+    sum += item;
+});
+console.log(sum)
+
+Return all the prime numbers in an array?
+
+var prime = function(n){
+    var arr = [];
+    for(var i=2;i<=n;i++){
+        var flag = true;
+        for(var j=2;j<i;j++){
+            if(i%j==0){
+                flag = false;
+                break;
+            }
+        }
+        if(flag){
+            arr.push(i);
+        }
+    }
+    return arr;
+}
+console.log(prime(10));
+
+Return all the palindromes in an array?
+
+(function(){
+    var arr = [1,2,3,4,5,6,7,8,9,10];
+    var palindromes = arr.filter(function(item){
+        return item.toString() === item.toString().split('').reverse().join('');
+    });
+    console.log(palindromes);
+})();
+
+Return median of two sorted arrays of the same size?
+
+function median(arr1, arr2) {
+    var len = arr1.length;
+    var mid = Math.floor(len / 2);
+    var median = 0;
+    if (len % 2 === 0) {
+      median = (arr1[mid] + arr2[mid]) / 2;
+    } else {
+      median = arr1[mid];
+    }
+    return median;
+  }
+
+  Remove duplicates from an array?
+
+  var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var unique = arr.filter(function(elem, index, self) {
+    return index == self.indexOf(elem);
+});
+console.log(unique);
+
+Rotate an array by k times?
+
+(function(arr, k) {
+    for (let i = 0; i < k; i++) {
+      arr.unshift(arr.pop());
+    }
+    return arr;
+  })([1, 2, 3, 4, 5, 6, 7], 3);
+
+  
+
+  the below programs in arrow functions.
+
+  Print odd numbers in an array?
+ var arr=[1,2,3,4,5,6,7,8,9,10]
+ var odd = arr.filter(el => el % 2 !== 0);
+
+ Convert all the strings to title caps in a string array?
+
+ var arr = ["hello", "world"];
+ var newArr = arr.map(str => str.toUpperCase());
+
+ Sum of all numbers in an array?
+
+ var sum = (arr) => {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+
+    Return all the prime numbers in an array?
+
+    var prime = (arr) => {
+        return arr.filter(num => {
+          for (let i = 2; i < num; i++) {
+            if (num % i === 0) return false;
+          }
+          return num !== 1;
+        });
+      };
+
+      Return all the palindromes in an array?
+     
+      var palindromes = arr => arr.filter(str => str === str.split('').reverse().join(''));
+
+
+
+
+
+
+
+
+
